@@ -4,15 +4,16 @@
 
 #* ---------------------------------------------------------------------------------------------------
 
-######     #    #     # ### ######        #    #     # ####### #     # ######     #    #     # ####### 
-#     #   # #   #     #  #  #     #      # #   #     # #       ##    # #     #   # #   ##    # #     # 
-#     #  #   #  #     #  #  #     #     #   #  #     # #       # #   # #     #  #   #  # #   # #     # 
-#     # #     # #     #  #  #     #    #     # #     # #####   #  #  # #     # #     # #  #  # #     # 
-#     # #######  #   #   #  #     #    #######  #   #  #       #   # # #     # ####### #   # # #     # 
-#     # #     #   # #    #  #     #    #     #   # #   #       #    ## #     # #     # #    ## #     # 
-######  #     #    #    ### ######     #     #    #    ####### #     # ######  #     # #     # ####### 
+ ####   ####  #    # #    # ###### #####  ##### ### #####   ####  #####  
+#    # #    # ##   # #    # #      #    #   #    #  #    # #    # #    # 
+#      #    # # #  # #    # #####  #    #   #    #  #    # #    # #    # 
+#      #    # #  # # #    # #      #####    #    #  #    # #    # #####  
+#    # #    # #   ##  #  #  #      #   #    #    #  #    # #    # #   #  
+ ####   ####  #    #   ##   ###### #    #   #   ### #####   ####  #    # 
                                                                                                
 #* ---------------------------------------------------------------------------------------------------
+
+#$ by @avendanod
 
 #! https://github.com/avendanod
 #! https://tensify.net
@@ -27,14 +28,15 @@ import csv                                                          #-> csv PERM
 import os                                                           #-> csv PERMITE FUNCIONES DEL SISTEMA OPERATIVO
 
 #$ TOMA EL ARCHIVO INDICADO
-fileName = sys.argv[1]
+fileName = sys.argv[1]                                              #-> PASAR COMO PARÁMETRO EL PATH DEL ARCHIVO (>py extract.py "dirección/nombre archivo.csv")
 print("-----------")
 print("ARCHIVO ORIGEN: "+fileName)
 
 #$ ORGANIZA EL NOMBRE EL ARCHIVO DESTINO
-fileString = os.path.split(fileName)                                #-> SEPARA LA VARIABLE filename EN 2 PARTES dirArchivo y nomArchivo
-dirArchivo = fileString[0]
-nomArchivo = fileString[1].replace(".csv","")                       #-> EN LA VARIABLE nomArchivo, REEMPLAZA EL TEXTO ".CVS" POR "VACÍO"
+fileString = os.path.split(fileName)                                #-> SEPARA (split) LA VARIABLE filename EN 2 PARTES dirArchivo y nomArchivo
+dirArchivo = fileString[0]                                          #-> LA PARTE 0 ES LA DIRECCIÓN (PATH) DEL ARCHIVO
+nomArchivo = fileString[1].replace(".csv","")                       #-> LA PARTE 1 ES EL NOMBRE DEL ARCHIVO Y LO PONEMOS EN UNA VARIABLE dirArchivo
+                                                                    #-> APROVECHAMOS PARA REEMPLAZA EL TEXTO ".CVS" POR "VACÍO" CON "replace" Y PONERLO EN LA VARIABLE nomArchivo
 
 #$ MUESTRA LA DIRECCIÓN Y EL ARCHIVO QUE INGRESÓ COMO PARÁMETRO
 print("-----------")
